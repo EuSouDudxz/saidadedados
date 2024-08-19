@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decomposição de IP</title>
+</head>
+<body>
+    <script>
+        // Função para calcular as potências de 2 usadas em um número
+        function calcularPotencias(num) {
+            let potencias = [];
+            let potencia = 1;
+            for (let i = 0; i < 8; i++) {
+                if (num & potencia) {
+                    potencias.push(`2^${i}`);
+                }
+                potencia <<= 1; // Multiplica a potência por 2
+            }
+            return potencias.reverse(); // Reverte para ordem crescente
+        }
+
+        // Endereço IP a ser decomposto
+        const ip = "192.168.0.101";
+
+        // Separa o IP em octetos
+        const octetos = ip.split('.').map(Number);
+
+        // Processamento e Saída de Dados
+        document.write(`<h1>Decomposição do IP ${ip}</h1>`);
+        octetos.forEach((octeto, index) => {
+            const potencias = calcularPotencias(octeto);
+            document.write(`<p>Octeto ${index + 1} (${octeto}): ${potencias.join(', ')}</p>`);
+
+            document.write('nao entendi como fazia,entao so p n deixar de lado eu peguei na internet')
+        });
+
+        
+    </script>
+</body>
+</html>

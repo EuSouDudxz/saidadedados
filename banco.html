@@ -1,0 +1,37 @@
+<script>
+    /*
+    Imagine que você irá pegar o valor de R$ 350,00 no caixa do banco, em quantas notas de 100, 50, 20, 10 e 5 o caixa retornará?
+
+    Construa um algoritmo que retorne as quantidades dos respectivos valores de notas.
+    */
+
+    // Entrada de Dados
+
+    let valor = 350; // Valor total a ser retirado
+
+    // Processamento
+    let notas100 = Math.floor(valor / 100);
+        valor %= 100;
+
+        let notas50 = Math.floor(valor / 50);
+        valor %= 50;
+
+        let notas20 = Math.floor(valor / 20);
+        valor %= 20;
+
+        let notas10 = Math.floor(valor / 10);
+        valor %= 10;
+
+        let notas5 = Math.floor(valor / 5);
+
+
+    // Saída de Dados
+    
+    document.write("Notas de 100: " + notas100);
+    document.write("<br>Notas de 50: " + notas50);
+    document.write("<br>Notas de 20: " + notas20);
+    document.write("<br>Notas de 10: " + notas10);
+    document.write("<br>Notas de 5: " + notas5);
+
+
+</script>

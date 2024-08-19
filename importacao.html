@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+</head>
+<body>
+    <script>
+        // Entrada de Dados
+        let valorHeadset = 100.00; // Valor do headset
+        let valorDrone = 300.00;   // Valor do drone
+
+        // Constantes
+        const icmsPercentual = 0.17; // 17% ICMS
+        const taxaImportacaoPercentual = 0.60; // 60% taxa de importação
+
+        // Função para calcular imposto
+        function calcularImposto(valor) {
+            let icms = valor > 250 ? valor * icmsPercentual : 0;
+            let taxaImportacao = icms * taxaImportacaoPercentual;
+            let totalImposto = icms + taxaImportacao;
+
+            return totalImposto;
+        }
+
+        // Processamento
+        let impostoHeadset = calcularImposto(valorHeadset);
+        let impostoDrone = calcularImposto(valorDrone);
+
+        // Saída de Dados
+        document.write(`<p>Imposto total sobre o headset (R$ 100,00): R$ ${impostoHeadset.toFixed(2)}</p>`);
+        document.write(`<p>Imposto total sobre o drone (R$ 300,00): R$ ${impostoDrone.toFixed(2)}</p>`);
+    </script>
+</body>
+</html>
